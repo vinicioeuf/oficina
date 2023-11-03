@@ -29,7 +29,6 @@ try{
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="stylesheet" href="css/tabelas.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <title>Tabelas</title>
@@ -119,26 +118,18 @@ try{
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Nome do usuário</span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
-                            </a>
+                        <li class="nav-item">
+                            
+                                <div>
+    <a style="border-radius:20px" type="button" href="login.php" class="btn btn-danger">
+        ENTRAR
+</a>
+    <a style="border-radius:20px" type="button" href="cadastro.php" class="btn btn-primary">
+    CADASTRAR
+    </a>
+    </div>
+                    
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="login.php">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
                         </li>
 
                     </ul>
@@ -154,11 +145,12 @@ try{
                     
                     <div class="card shadow mb-4">
                         <div class="card-header py-3 d-flex justify-content-between">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModaladdProduto">
+                            <button style="border-radius:20px" type="button" class="btn btn-primary btn-user btn-block" data-bs-toggle="modal" data-bs-target="#exampleModaladdProduto">
     Novo Produto
     </button>
+    
                         </div>
-<form method="POST" action="addProduto.php" class="modal form-produto fade" id="exampleModaladdProduto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<form method="POST" action="addProduto.php" class="modal user form-produto fade" id="exampleModaladdProduto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-produto modal-content">
       <div class="modal-header">
@@ -166,16 +158,16 @@ try{
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="input-container">
-          <input type="text" id="nome" name="nome"  placeholder="Nome">
+        <div class="form-group">
+          <input class="form-control form-control-user" type="text" id="nome" name="nome"  placeholder="Nome">
         </div>
 <br>
-        <div class="input-container">
-          <input type="text" id="valor" name="valor" placeholder="Valor">
+        <div class=" form-group">
+          <input class="form-control form-control-user" type="text" id="valor" name="valor" placeholder="Valor">
         </div>
       </div>
       <div class="d-flex align-items-start justify-content-start modal-footer">
-        <button type="submit" name="submit" class="btn btn-primary">Adicionar Produto</button>
+        <button type="submit" name="submit" class="btn btn-primary btn-user btn-block">Adicionar Produto</button>
       </div>
     </div>
   </div>
