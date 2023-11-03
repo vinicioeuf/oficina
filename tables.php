@@ -29,9 +29,10 @@ try{
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="stylesheet" href="css/tabelas.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <title>SB Admin 2 - Tables</title>
+    <title>Tabelas</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -133,7 +134,7 @@ try{
                                     Profile
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="login.php">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -157,33 +158,29 @@ try{
     Novo Produto
     </button>
                         </div>
-<form method="POST" action="addProduto.php" class="modal fade" id="exampleModaladdProduto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<form method="POST" action="addProduto.php" class="modal form-produto fade" id="exampleModaladdProduto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-produto modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">NOVO PRODUTO</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-  <div class="input-container">
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="nome">
-  </div>
-
-  <div class="input-container">
-    <label for="valor">Valor:</label>
-    <input type="text" id="valor" name="valor">
-  </div>
-
-
+        <div class="input-container">
+          <input type="text" id="nome" name="nome"  placeholder="Nome">
+        </div>
+<br>
+        <div class="input-container">
+          <input type="text" id="valor" name="valor" placeholder="Valor">
+        </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      <div class="d-flex align-items-start justify-content-start modal-footer">
         <button type="submit" name="submit" class="btn btn-primary">Adicionar Produto</button>
       </div>
     </div>
   </div>
 </form>
+
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
