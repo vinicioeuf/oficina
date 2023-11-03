@@ -47,7 +47,7 @@ class registroDao
 
     
     
-    function registrar($nome, $sobrenome, $email, $senhaSafe)
+    function registrar($nome, $sobrenome, $email, $senha)
     {
 
         try {
@@ -62,7 +62,7 @@ class registroDao
                 return false;
             } else {
 
-                $sql = "INSERT INTO usuarios (nome, sobrenome, email, senha) VALUES ('$nome','$sobrenome','$email','$senhaSafe')";
+                $sql = "INSERT INTO usuarios (nome, sobrenome, email, senha) VALUES ('$nome','$sobrenome','$email','$senha')";
 
                 $stmt = $con->prepare($sql);
                 $stmt->execute();

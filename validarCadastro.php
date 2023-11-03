@@ -17,13 +17,13 @@ if (isset($_POST['submit'])) {
     window.location.href='cadastro.php';</script>";
     exit;
   } 
-    $senhaSafe = password_hash($senha, PASSWORD_DEFAULT);
+    // $senhaSafe = password_hash($senha, PASSWORD_DEFAULT);
       
       $verEmail = new registroDao();
       $registroDao = new registroDao();
 
       if($verEmail->validarEmail($email) == true){//Verificação básica de email, ainda incoerente. mesmo colocando um domínio errado continua registrando, por exemplo: 123@aluno.if-sertao.edu.br está errado mas mesmo assim está cadastrando
-        $registroDao->registrar($nome, $sobrenome, $email, $senhaSafe);
+        $registroDao->registrar($nome, $sobrenome, $email, $senha);
         echo "<script>window.alert('Cadastro realizado')
       window.location.href='login.php';</script>";
       }else{
