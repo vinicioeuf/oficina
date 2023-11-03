@@ -1,5 +1,6 @@
 
 <?php
+session_start();
 include('conexao.php');
 include('registroDao.php');
 
@@ -13,7 +14,7 @@ if (isset($_POST['submit'])) {
 
   if($senha!=$confirmaSenha){
     echo "<script>window.alert('Ops! Digite senhas iguais...')
-    window.location.href='index.php';</script>";
+    window.location.href='cadastro.php';</script>";
     exit;
   } 
     $senhaSafe = password_hash($senha, PASSWORD_DEFAULT);
