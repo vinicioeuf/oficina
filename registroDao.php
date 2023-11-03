@@ -62,7 +62,7 @@ class registroDao
                 return false;
             } else {
 
-                $sql = "INSERT INTO usuarios (nome, sobrenome, senha) VALUES ('$nome','$sobrenome','$email','$senhaSafe')";
+                $sql = "INSERT INTO usuarios (nome, sobrenome, email, senha) VALUES ('$nome','$sobrenome','$email','$senhaSafe')";
 
                 $stmt = $con->prepare($sql);
                 $stmt->execute();
