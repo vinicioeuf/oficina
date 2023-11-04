@@ -18,7 +18,7 @@ try {
   
 
     // Redireciona de volta para a página inicial
-    header('Location: tables.php');
+    header('Location: oficina.php');
     exit();
 } catch (PDOException $e) {
     echo 'Erro ao conectar com o banco de dados: ' . $e->getMessage();
