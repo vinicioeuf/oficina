@@ -11,7 +11,6 @@ try{
     $stmt = $con->prepare($query);
     $stmt->execute();
     $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    echo("Conexão O.K");
  } catch (PDOException $e) {
     echo("Erro na conexão");
     }
@@ -86,28 +85,20 @@ try{
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-
-
-                    <!-- Topbar Navbar -->
                     <ul style="width: 100%;" class="navbar-nav ml-auto d-flex justify-content-between">
-
                         <li class="nav-item">
-                            <h1 class="h3 mt-3 text-gray-800">Programação Web: Autenticação, Criptografia, CRUD e
+                            <h1 class="h3 mt-4 text-gray-800">Programação Web: Autenticação, Criptografia, CRUD e
                                 Hospedagem
                             </h1>
                         </li>
-
                         <div class="topbar-divider d-none d-sm-block"></div>
-
-                        <!-- Nav Item - User Information -->
                         <li class="nav-item">
 
-                            <div>
+                            <div class="mt-3">
                                 <?php
         if(isset($_SESSION['nome'])){
 ?>
-                                <a class="nav-link" href="oficina.php">
+                                <a class="nav-link" href="login.php">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                         class="bi bi-person-fill" viewBox="0 0 16 16">
                                         <path
@@ -127,25 +118,17 @@ try{
                                 </a>
                                 <?php
         }
-
 ?>
                             </div>
-
-                            <!-- Dropdown - User Information -->
                         </li>
-
                     </ul>
-
                 </nav>
-                <!-- End of Topbar -->
-
-                <!-- Begin Page Content -->
                 <div class="container-fluid">
-
-                    <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Produtos</h1>
-
                     <div class="card shadow mb-4">
+                    <?php
+        if(isset($_SESSION['nome'])){
+?>
                         <div class="card-header py-3 d-flex justify-content-between">
                             <button style="border-radius:20px" type="button" class="btn btn-primary btn-user btn-block"
                                 data-bs-toggle="modal" data-bs-target="#exampleModaladdProduto">
@@ -153,6 +136,8 @@ try{
                             </button>
 
                         </div>
+                        <?php
+        } ?>
                         <form method="POST" action="addProduto.php" class="modal user form-produto fade"
                             id="exampleModaladdProduto" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
@@ -181,10 +166,38 @@ try{
                                 </div>
                             </div>
                         </form>
-
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
@@ -284,6 +297,29 @@ try{
                                     </tfoot>
 
                                 </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                
+
+
                             </div>
                         </div>
                     </div>
