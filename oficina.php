@@ -5,15 +5,19 @@ session_start();
 require('conexao.php');
 
 
-try{
+try
+{
     $con = Conexao::getInstance();
     $query = "SELECT * FROM produtos";
     $stmt = $con->prepare($query);
     $stmt->execute();
     $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
- } catch (PDOException $e) {
+    echo("Conexão O.K");
+} 
+catch (PDOException $e) 
+{
     echo("Erro na conexão");
-    }
+}
 ?>
 
 
