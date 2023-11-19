@@ -212,21 +212,20 @@ catch (PDOException $e)
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $sql = "SELECT * FROM produtos";
-                                        $resultado = $con->query($sql);  
+                                        $resultado = $con->query($query); 
                                         $index=1;
-                                        while($fet = $resultado->fetch(PDO::FETCH_ASSOC))
+                                        while($dados = $resultado->fetch(PDO::FETCH_ASSOC))
                                         {
                                         ?>
                                         <tr>
                                             <th style="color: grey;">
-                                                <?php echo $fet['id']?>
+                                                <?php echo $dados['id']?>
                                             </th>
                                             <th style="color: grey;">
-                                                <?php echo $fet['nome']?>
+                                                <?php echo $dados['nome']?>
                                             </th>
                                             <th style="color: grey;">R$
-                                                <?php echo $fet['valor']?>
+                                                <?php echo $dados['valor']?>
                                             </th>
                                             <th
                                                 style="color: grey;">
@@ -242,7 +241,7 @@ catch (PDOException $e)
                                                             d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                                                     </svg>
                                                 </button>
-                                                <a href="deleteProduto.php?id=<?php echo $fet['id']; ?>" style="border-radius:20px" class="btn btn-danger btn-user btn-block" type="button">
+                                                <a href="deleteProduto.php?id=<?php echo $dados['id']; ?>" style="border-radius:20px" class="btn btn-danger btn-user btn-block" type="button">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                         fill="currentColor" class=" bi bi-trash2-fill text-white"
                                                         viewBox="0 0 16 16">
@@ -265,15 +264,15 @@ catch (PDOException $e)
                                                             aria-label="Close"></button>
                                                     </div>
                                                     <form method="POST" action="editProduto.php" class="modal-body user fade">
-                                                        <input type="hidden" name="id" value="<?php echo $fet['id']; ?>">
+                                                        <input type="hidden" name="id" value="<?php echo $dados['id']; ?>">
                                                         <div  style="border-radius:20px" class="form-group ml-2 mr-2">
                                                             <input  style="border-radius:20px" class="form-control form-control-user" type="text"
-                                                                id="nome" name="nome" value="<?php echo $fet['nome']; ?>" placeholder="Nome">
+                                                                id="nome" name="nome" value="<?php echo $dados['nome']; ?>" placeholder="Nome">
                                                         </div>
                                                         <br>
                                                         <div style="border-radius:20px" class=" form-group ml-2 mr-2">
                                                             <input  style="border-radius:20px" class="form-control form-control-user" type="text"
-                                                                id="valor" name="valor" placeholder="Valor" value="<?php echo $fet['valor']; ?>">
+                                                                id="valor" name="valor" placeholder="Valor" value="<?php echo $dados['valor']; ?>">
                                                         </div>
                                                         <div
                                                         class="d-flex align-items-start justify-content-start modal-footer">
